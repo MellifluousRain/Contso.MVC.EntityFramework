@@ -1,0 +1,247 @@
+﻿@model Contso.Model.People
+
+@{
+    ViewBag.Title = "Create";
+    List<SelectListItem> states = new List<SelectListItem>();
+    states.Add(new SelectListItem { Text = "Alabama", Value = "AL" });
+    states.Add(new SelectListItem { Text = "Alaska", Value = "AK" });
+    states.Add(new SelectListItem { Text = "Arizona", Value = "AZ" });
+    states.Add(new SelectListItem { Text = "Arkansas", Value = "AR" });
+    states.Add(new SelectListItem { Text = "California", Value = "CA" });
+    states.Add(new SelectListItem { Text = "Colorado", Value = "CO" });
+    states.Add(new SelectListItem { Text = "Connecticut", Value = "CT" });
+    states.Add(new SelectListItem { Text = "District of Columbia", Value = "DC" });
+    states.Add(new SelectListItem { Text = "Delaware", Value = "DE" });
+    states.Add(new SelectListItem { Text = "Florida", Value = "FL" });
+    states.Add(new SelectListItem { Text = "Georgia", Value = "GA" });
+    states.Add(new SelectListItem { Text = "Hawaii", Value = "HI" });
+    states.Add(new SelectListItem { Text = "Idaho", Value = "ID" });
+    states.Add(new SelectListItem { Text = "Illinois", Value = "IL" });
+    states.Add(new SelectListItem { Text = "Indiana", Value = "IN" });
+    states.Add(new SelectListItem { Text = "Iowa", Value = "IA" });
+    states.Add(new SelectListItem { Text = "Kansas", Value = "KS" });
+    states.Add(new SelectListItem { Text = "Kentucky", Value = "KY" });
+    states.Add(new SelectListItem { Text = "Louisiana", Value = "LA" });
+    states.Add(new SelectListItem { Text = "Maine", Value = "ME" });
+    states.Add(new SelectListItem { Text = "Maryland", Value = "MD" });
+    states.Add(new SelectListItem { Text = "Massachusetts", Value = "MA" });
+    states.Add(new SelectListItem { Text = "Michigan", Value = "MI" });
+    states.Add(new SelectListItem { Text = "Minnesota", Value = "MN" });
+    states.Add(new SelectListItem { Text = "Mississippi", Value = "MS" });
+    states.Add(new SelectListItem { Text = "Missouri", Value = "MO" });
+    states.Add(new SelectListItem { Text = "Montana", Value = "MT" });
+    states.Add(new SelectListItem { Text = "Nebraska", Value = "NE" });
+    states.Add(new SelectListItem { Text = "Nevada", Value = "NV" });
+    states.Add(new SelectListItem { Text = "New Hampshire", Value = "NH" });
+    states.Add(new SelectListItem { Text = "New Jersey", Value = "NJ" });
+    states.Add(new SelectListItem { Text = "New Mexico", Value = "NM" });
+    states.Add(new SelectListItem { Text = "New York", Value = "NY" });
+    states.Add(new SelectListItem { Text = "North Carolina", Value = "NC" });
+    states.Add(new SelectListItem { Text = "North Dakota", Value = "ND" });
+    states.Add(new SelectListItem { Text = "Ohio", Value = "OH" });
+    states.Add(new SelectListItem { Text = "Oklahoma", Value = "OK" });
+    states.Add(new SelectListItem { Text = "Oregon", Value = "OR" });
+    states.Add(new SelectListItem { Text = "Pennsylvania", Value = "PA" });
+    states.Add(new SelectListItem { Text = "Rhode Island", Value = "RI" });
+    states.Add(new SelectListItem { Text = "South Carolina", Value = "SC" });
+    states.Add(new SelectListItem { Text = "South Dakota", Value = "SD" });
+    states.Add(new SelectListItem { Text = "Tennessee", Value = "TN" });
+    states.Add(new SelectListItem { Text = "Texas", Value = "TX" });
+    states.Add(new SelectListItem { Text = "Utah", Value = "UT" });
+    states.Add(new SelectListItem { Text = "Vermont", Value = "VT" });
+    states.Add(new SelectListItem { Text = "Virginia", Value = "VA" });
+    states.Add(new SelectListItem { Text = "Washington", Value = "WA" });
+    states.Add(new SelectListItem { Text = "West Virginia", Value = "WV" });
+    states.Add(new SelectListItem { Text = "Wisconsin", Value = "WI" });
+    states.Add(new SelectListItem { Text = "Wyoming", Value = "WY" });
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>People</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Firstname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Firstname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MiddleName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AddressLine1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AddressLine1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AddressLine1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AddressLine2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AddressLine2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AddressLine2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UnitOrApartmentNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UnitOrApartmentNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UnitOrApartmentNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.State, states, "Please Select States")
+                @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Zipcode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Zipcode, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Zipcode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CreatedDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CreatedDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CreatedDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CreatedBy, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UpdatedDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UpdatedDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UpdatedDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UpdatedBy, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UpdatedBy, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UpdatedBy, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Salt, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Salt, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Salt, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsLocked, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IsLocked, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IsLocked, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastLockedDateTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LastLockedDateTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LastLockedDateTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FailedAttempts, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FailedAttempts, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FailedAttempts, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
